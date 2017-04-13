@@ -54,6 +54,7 @@ baseurl: "https://arabejs.ga"
 # !! You don't need to change any of the configuration flags below !!
 #
 future: true
+timezone: TIMEZONE
 
 permalink: /:title/
 
