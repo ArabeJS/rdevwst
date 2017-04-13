@@ -1,0 +1,34 @@
+<nav class="navbar navbar-fixed-top navbar-inverse navbar-shadow">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed navbarButton" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand RD-nvbr" href="{{ site.baseurl }}/">
+        <div class="navbar-brand-img">
+          <img src="{{ site.baseurl }}/assets/img/logo-2.png" alt="ArabeJS Logo">
+        </div>
+      </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <span class="flex"></span>
+      <div class="RD-serch">
+        <i class="material-icons" style='color:#fff;margin:4px;'>&#59574;</i>
+    		<input id='RD-si' ng-keyup='getValue($event)' placeholder="بحث ..." type='text'/>
+      </div>
+      <span class="flex"></span>
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="{{ site.baseurl }}/">Blog</a></li>
+        <li><a href="{{ site.baseurl }}/about" class="btn btn-success">About</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Raafet-Devf -->

@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading">أخر المواضيع</div>
+  <div class="panel-body">
+
+    {% for post in site.posts limit:5 %}
+      <div class="media">
+        <div class="media-left media-middle">
+          <a href="{{ site.baseurl }}{{ post.url }}">
+            <img class="media-object" src="{{ post.thumb }}" alt="{{ post.title }}">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{ post.title }}</h4>
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
+</div>

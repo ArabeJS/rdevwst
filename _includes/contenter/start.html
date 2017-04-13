@@ -1,0 +1,35 @@
+{% if page.layout == "post" or page.layout == "page" %}
+  <article class="{{page.layout}}">
+{% endif %}
+
+{% if page.layout == "post" or page.type == "home" %}
+    <div class="container {{page.layout}}">
+      <div class="row no-mrg">
+
+        <div class="col-sm-8">
+{% endif %}
+
+{% if page.layout == "page" %}
+  <div class="container">
+{% endif %}
+
+{{ content }}
+
+{% if page.layout == "page" %}
+  </div>
+{% endif %}
+
+{% if page.layout == "post" or page.type == "home" %}
+        </div>
+
+        <div class="col-sm-4">
+          {% include sidebar/sidebar.html %}
+        </div>
+
+      </div>
+    </div>
+{% endif %}
+
+{% if page.layout == "post" or page.layout == "page" %}
+  </article>
+{% endif %}

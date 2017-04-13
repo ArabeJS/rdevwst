@@ -1,0 +1,11 @@
+{% if page.type == "home"  %}
+  {% include header/home_header.html %}
+{% endif %}
+
+{% if page.layout == "post" %}
+  {% include header/post_header.html %}
+{% endif %}
+
+{% if page.layout == "page" %}
+    {% include header/page_header.html %}
+{% endif %}

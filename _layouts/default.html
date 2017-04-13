@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head dir="rtl">
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
+    {% include head/head.html %}
+  </head>
+
+  <body id="page-top">
+    {% include header/header.html %}
+    {% include header/header_inc.html %}
+
+    <div id="main" role="main">
+      {% include contenter/start.html %}
+    </div>
+
+    {% include footer/footer.html %}
+    {% include footer/footer_inc.html %}
+
+  </body>
+</html>

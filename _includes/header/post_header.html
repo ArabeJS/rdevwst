@@ -1,0 +1,15 @@
+<div class="jumbotron RD-pt" style="background-image:url({{page.thumb}});">
+  <div class="container">
+
+    <h2>{{ page.title }}</h2>
+    <div class="RD-ainfo">
+      <div class="RD-ainfo-a" style="background-image:url({{site.avatar}});"></div>
+      <div class="RD-ainfo-i">
+        <h6><i class="material-icons">&#xE853;</i>  by {{ page.author }}</h6><br>
+        <h6><i id="n-n">.....</i><i class="material-icons">&#xE2C7;</i> {{ page.tags }}</h6><br>
+        <h6><i class="material-icons">&#xE192;</i> {{ page.date | date: "%B %e, %Y" }}</h6><br>
+      </div>
+    </div>
+
+  </div>
+</div>
