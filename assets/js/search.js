@@ -1,7 +1,6 @@
 ---
 ---
   
-  
 (function($) {
   $.fn.tmpl = function(obj) {
     var _this = this,
