@@ -1,5 +1,23 @@
 ---
 ---
+(function($) {
+  $.fn.tmpl = function(obj) {
+    var _this = this,
+      el = $(this);
+
+    return (function() {
+      var original = el.html();
+
+      el.html(el.html().replace(/{{([^}}]+)}}/g, function(wholeMatch, key) {
+        var substitution = obj[$.trim(key)];
+
+        return typeof substitution == 'undefined' ? wholeMatch : substitution;
+      }));
+
+      return el.html() == original ? _this : $(el).tmpl(obj);
+    })();
+  };
+})(jQuery);
 
 (function($) {
     $.fn.onEnter = function(func) {
@@ -23,7 +41,13 @@ $(document).ready(function() {
 
   $("#RD-si").onEnter( function() {
     var inp = $("#RD-si").val();
-    var res = RDdata.search(inp);
+    var reg = new RegExp(inp, "i");
+    var res = '';
+    $.each(RDdata, function(key, val){
+      if (val.title.search(regex) != -1)) {
+        res+= val.title;//$("#div1").load("demo_test.txt");
+      }
+    }
     console.log(res);
   });
 
