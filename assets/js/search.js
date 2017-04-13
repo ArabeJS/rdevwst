@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   $("#RD-si").onEnter( function() {
     var inp = $("#RD-si").val();
-    var res = JSON.search(RDdata, '//*[title="'+inp+'"]');
+    var res = RDdata.search(inp);
     console.log(res);
   });
 
