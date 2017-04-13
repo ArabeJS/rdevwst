@@ -46,7 +46,7 @@ $(document).ready(function() {
     var reg = new RegExp(inp, "i");
     var res = '';
     $.each(RDdata, function(key, val){
-      if (val.title.search(regex) != -1)) {
+      if (val.title.search(regex) != -1) {
         res+= val.title;//$("#div1").load("demo_test.txt");
       }
     }
