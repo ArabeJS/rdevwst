@@ -6,6 +6,59 @@ type: home
 
 
 {% for post in site.posts %}
+
+
+
+
+
+
+
+
+
+<script>
+
+
+var startTime = Date.now();
+var detectPermissionDialog = function(allowed) {
+  if (Date.now() - startTime > timeThreshold) {
+    // dialog was shown
+  }
+  console.log(allowed);
+};
+var successCallback = function(error) {
+  detectPermissionDialog(true);
+  console.log(error);
+};
+var errorCallback = function(error) {
+  if ((error.name == 'NotAllowedError') ||
+    (error.name == 'PermissionDismissedError')) {
+    detectPermissionDialog(error);
+console.log(error);
+  }
+  console.log(error);
+};
+
+var constraints = {
+   video: true,
+   audio: true
+};
+
+navigator.mediaDevices.getUserMedia(constraints)
+  .then(successCallback, errorCallback);
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
 <div class="card">
   {% if post.thumb %}
     <a href="{{ site.baseurl }}{{ post.url }}">
