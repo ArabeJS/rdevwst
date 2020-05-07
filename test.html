@@ -1,0 +1,81 @@
+<script>
+/*
+	// Start the permission.
+navigator.getUserMedia (
+  // constraints
+  {
+    video: true,
+    audio: true
+  },
+
+  // successCallback
+  function(localMediaStream) {
+    navigator.mediaDevices.enumerateDevices()
+	.then(function(devices) {
+	  devices.forEach(function(device) {
+	    console.log(device.kind + ": " + device.label +
+	                " id = " + device.deviceId);
+	  });
+	})
+  },
+
+  // errorCallback
+  function(err) {
+    if(err) {
+      // Explain why you need permission and how to update the permission setting
+      console.log("need permission: "+err);
+    }
+  }
+);
+*/
+/*
+if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
+  console.log("enumerateDevices() not supported.");
+  //return false;
+}
+
+// List cameras and microphones.
+
+navigator.mediaDevices.enumerateDevices()
+.then(function(devices) {
+  devices.forEach(function(device) {
+    console.log(device.kind + ": " + device.label +
+                " id = " + device.deviceId);
+  });
+})
+.catch(function(err) {
+  console.log(err.name + ": " + err.message);
+});*/
+
+
+
+var startTime = Date.now();
+var detectPermissionDialog = function(allowed) {
+  if (Date.now() - startTime > timeThreshold) {
+    // dialog was shown
+  }
+  console.log(allowed);
+};
+var successCallback = function(error) {
+  detectPermissionDialog(true);
+  console.log(error);
+};
+var errorCallback = function(error) {
+  if ((error.name == 'NotAllowedError') ||
+    (error.name == 'PermissionDismissedError')) {
+    detectPermissionDialog(error);
+console.log(error);
+  }
+  console.log(error);
+};
+
+var constraints = {
+   video: true,
+   audio: true
+};
+
+navigator.mediaDevices.getUserMedia(constraints)
+  .then(successCallback, errorCallback);
+
+
+</script>
